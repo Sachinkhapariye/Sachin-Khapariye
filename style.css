@@ -1,0 +1,681 @@
+/* NIMBUS */
+@font-face {
+    font-family: 'Nimbus';
+    src: url(./Nimbus-Sans-D-OT-Bold_32747.ttf);
+}
+
+/* VOYAGE REGULAR */
+@font-face {
+    font-family: 'Voyage Regular';
+    src: url(./Voyage-Regular.ttf);
+}
+
+/* GILROY */
+@font-face {
+    font-family: 'Gilroy';
+    src: url(./Gilroy-Medium.ttf);
+    font-weight: 500;
+}
+
+/* MAIN TAGS */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* ***************************** MAIN ******************************************** */
+#main {
+    width: 100vw;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+/* ***************************** hidden menu ******************************************** */
+#hidmenu{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+    position: absolute;
+    bottom: 100vh;
+    z-index: 99999;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+.tags .h1{
+    width: 100%;
+    /* height: 10%; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.h1 h1{
+    font-size: 6vw;
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-family: "Voyage Regular";
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+#hidmenu i{
+    position: absolute;
+    right: 5%;
+    top: 4%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.5s;
+    padding: 9px 9px;
+    background-color: white;
+    color: black;
+    font-size: 1.5vw;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#hidmenu i:hover{
+    transform: rotate(-360deg);
+}
+#items{
+    width: 40%;
+    /* background-color: red; */
+}
+.h1 h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    margin-top: 3px;
+    background-color: #00D2C2;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+.h1 h1:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.h1 h1:hover{
+    color: #00D2C2;
+}
+
+#tagimg{
+    display: flex;
+    width: 40%;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.tagimgs{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+.tagimgs img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* .tagimgs:nth-child(2n){
+    background-color: yellow;
+} */
+
+
+
+/* ***************************** PROGRESS BAR ******************************************** */
+#progress {
+    position: fixed;
+    width: 0%;
+    height: 10px;
+    z-index: 99999;
+    background-color: rgb(162, 0, 255);
+}
+
+/* ***************************** NAVIGATION BAR ******************************************** */
+#nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 22px 80px;
+    z-index: 999;
+    color: black;
+}
+#nav h3 {
+    font-weight: 500;
+}
+#nav i {
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    padding: 11px 11px;
+    background-color: black;
+    color: white;
+    font-size: 1vw;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#nav i:hover {
+    transform: rotate(360deg);
+}
+
+/* ***************************** STILL BG ******************************************** */
+#herof {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #9B8A63;
+    overflow: hidden;
+}
+
+#herof h1 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Nimbus";
+    font-size: 30vw;
+    font-weight: 100;
+    line-height: 26vw;
+    z-index: 3;
+    text-shadow: 0 0 7px rgba(69, 69, 69, 0.492);
+}
+#herof span {
+    font-family: "Nimbus";
+    z-index: 3;
+}
+#herof span:nth-child(2) {
+    font-family: "Nimbus";
+    z-index: 5;
+}
+#herof .para1 {
+    position: absolute;
+    top: -20%;
+    left: 53%;
+    width: 15vw;
+    font-size: 1vw;
+    font-weight: 100;
+    line-height: 1vw;
+}
+#herof .para2 {
+    position: absolute;
+    top: 85%;
+    left: 75%;
+    width: 15vw;
+    font-size: 1vw;
+    font-weight: 100;
+    line-height: 1vw;
+}
+.ccbanner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 24vw;
+    z-index: 4;
+}
+.roots {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(180deg);
+    width: 85vw;
+    mix-blend-mode: soft-light;
+    z-index: -1;
+}
+
+/* ***************************** HERO SECTION ******************************************** */
+#hero {
+    position: absolute;
+    overflow: hidden;
+    margin-top: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 20px;
+    background-color: rgb(31, 31, 31);
+}
+#htxt {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+#htxt h1 {
+    font-size: 2.5vw;
+    font-weight: 500;
+    margin-left: 30px;
+}
+#htxt .shift {
+    margin-left: 30%;
+}
+#square {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    width: 670px;
+    height: 670px;
+    background-color: rgb(225, 196, 142);
+}
+#circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background-color: rgb(31, 31, 31);
+}
+#small {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: rgba(255, 190, 110, 0);
+    color: black;
+    font-size: 1px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#fcircle,
+#scircle,
+#tcircle {
+    width: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+#square h1 {
+    position: absolute;
+    top: 12%;
+    right: -35%;
+    font-size: 1.5vw;
+    font-weight: 400;
+    text-align: right;
+}
+.copy {
+    margin-left: 26%;
+    margin-top: -20px;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+/* ************************ HERO FOOT *************************** */
+#h2f {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+    width: 100vw;
+    height: 20vh;
+    border-top: 2px solid rgba(255, 255, 255, 0.748);
+}
+#h2f p {
+    width: 40%;
+    font-size: 15px;
+}
+#h2f h1 {
+    font-size: 40px;
+}
+#h2f h1:nth-child(2) {
+    font-weight: 600;
+}
+
+/* ***************************** THIRD SECTION ******************************************** */
+#three {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+}
+#photu {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+#photu img{
+    width: 100%;
+    object-fit: cover;
+}
+#photus {
+    display: flex;
+    position: relative;
+    top: 50%;
+    left: 150%;
+    transform: translate(0, -50%);
+}
+.photu {
+    flex-shrink: 0;
+    width: 450px;
+    height: 550px;
+    background-color: yellow;
+    margin-left: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.photu img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ***************************** IMAGES SECTION ******************************************** */
+#four {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100vw;
+    height: 90vh;
+}
+#four>h1 {
+    letter-spacing: -3px;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    text-align: center;
+}
+#four h1 span {
+    font-size: 15vw;
+    font-family: "Voyage Regular";
+    font-weight: 200;
+}
+#four #imgs {
+    display: flex;
+    height: 20vh;
+    margin-top: 10%;
+}
+#img {
+    opacity: 0;
+    width: 9.5vw;
+    height: 100%;
+    /* background-color: red; */
+    border-radius: 4px;
+    overflow: hidden;
+}
+#img img{
+    height: 100%;
+    object-fit: cover;
+}
+/* #img:nth-child(2n) {
+    background-color: yellow;
+} */
+
+/* ***************************** FOOTER SECTION ******************************************** */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 2vh;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 5vw;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+}
+#footer h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 7vw;
+    line-height: 6vw;
+    font-weight: 600;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    cursor: pointer;
+}
+#footer h1:hover {
+    color: #00D2C2;
+}
+#footer h1::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 40%;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #00D2C2;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-out;
+}
+#footer h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+#botf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+}
+
+#image {
+    display: flex;
+    overflow: hidden;
+    width: 35vw;
+    height: 40vh;
+}
+.imgbox {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+.imgbox img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#topf {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#footer h4 {
+    position: relative;
+    text-decoration: none;
+    font-size: 3vw;
+    line-height: 4vw;
+    color: #fff;
+    font-family: "Gilroy";
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.25s ease-out;
+    cursor: pointer;
+    width: max-content;
+}
+#topf h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: 3px;
+    background-color: #00D2C2;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-out;
+}
+#topf h4:hover {
+    color: #00D2C2;
+}
+#topf h4:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* ***************************** RESPONSIVE 500px width ******************************************** */
+@media(max-width: 500px) {
+    #nav {
+        padding: 22px 40px;
+    }
+    #nav i {
+        font-size: 4vw;
+    }
+
+    #progress{
+        height: 4px;
+        background-color: rgb(0, 221, 255);
+    }
+
+    #herof h1 {
+        flex-direction: column;
+        font-size: 45vw;
+        line-height: 40vw;
+    }
+    .ccbanner {
+        width: 50vw;
+    }
+    #herof .para1 {
+        top: -13%;
+        left: 55%;
+        width: 20vw;
+        font-size: 1.5vw;
+        line-height: 1.5vw;
+    }
+    #herof .para2 {
+        top: 95%;
+        left: 70%;
+        width: 20vw;
+        font-size: 1.5vw;
+        line-height: 1.5vw;
+    }
+    .roots {
+        bottom: 0;
+        width: 165vw;
+    }
+
+    #htxt{
+        width: 75%;
+    }
+    #htxt h1 {
+        font-size: 3.5vw;
+        font-weight: 500;
+    }
+    #square {
+        width: 325px;
+        height: 325px;
+    }
+    #square h1 {
+        font-size: 1.8vw;
+        top: 6%;
+        right: -10%;
+        font-weight: 500;
+    }
+    #circle {
+        width: 300px;
+        height: 300px;
+    }
+    .copy {
+        margin-left: 0%;
+        font-size: 22px;
+    }
+
+    #h2f {
+        width: 100vw;
+        height: 10vh;
+    }
+    #h2f h1 {
+        font-size: 15px;
+    }
+    #h2f p {
+        width: 45%;
+        font-size: 9px;
+    }
+
+    #three{
+        height: 80vh;
+    }
+    #photu{
+        width: 250px;
+        height: 350px;
+    }
+    .photu {
+        width: 250px;
+        height: 350px;
+    }
+
+    #four #imgs{
+        width: 82vw;
+        flex-wrap: wrap;
+        height: 8vh;
+        margin-top: 50%;
+    }
+    #img{
+        width: 15vw;
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+    #four>h1 {
+        margin-bottom: 50%;
+    }
+    #four h1 span{
+        font-size: 17vw;
+    }
+
+    #footer{
+        height: 40vh;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    #image{
+        width: 50vw;
+    }
+    #topf{
+        width: 35%;
+    }
+    #footer h4{
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+
+    #footer h1{
+        font-size: 10vw;
+        line-height: 9vw;
+    }
+
+    #hidmenu h1{
+        font-size: 12vw;
+    }
+    #hidmenu i{
+        font-size: 5vw;
+    }
+    #hidmenu{
+        flex-direction: column-reverse;
+    }
+    #tagimg{
+        margin-top: 10%;
+        height: 40%;
+        width: 65%;
+    }
+    .tags .h1{
+        justify-content: center;
+    }
+    .tags{
+        margin-bottom: 10%;
+    }
+}
